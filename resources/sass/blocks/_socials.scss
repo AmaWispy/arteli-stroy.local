@@ -1,0 +1,35 @@
+.socials {
+    display: block;
+
+    img {
+        width: 100%;
+
+        &:hover {
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+    }
+
+    &__header,
+    &__footer {
+        width: 30px;
+    }
+
+    &__contacts {
+        width: 40px;
+        margin-right: 25px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .socials {
+        &__contacts,
+        &__footer {
+            margin-right: 20px;
+        }
+    }
+}

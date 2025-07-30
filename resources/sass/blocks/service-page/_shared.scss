@@ -1,0 +1,59 @@
+@import "./vars";
+
+.service-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: fit-content;
+
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 400;
+    color: $text-color;
+
+    position: relative;
+
+    cursor: pointer;
+
+    a {
+        font-size: 10px;
+        line-height: 12px;
+        font-weight: 400;
+        color: $text-color;
+
+        text-decoration: underline;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        scale: 0;
+    }
+
+    span {
+        display: block;
+
+        min-width: 20px;
+        max-width: 20px;
+        height: 20px;
+
+        border: solid 2px #586282;
+
+        position: relative;
+    }
+
+    [type="checkbox"]:checked + span::before {
+        content: url('data:image/svg+xml,<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.80668 7.41333L0.333344 4.94667L1.27335 4L2.80668 5.53333L8.33334 0L9.27335 0.946667L2.80668 7.41333Z" fill="%23586282"/></svg>');
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    [type="checkbox"]:user-invalid + span {
+        outline: solid red 1px;
+    }
+}

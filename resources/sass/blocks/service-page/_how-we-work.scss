@@ -1,0 +1,99 @@
+@import "./vars";
+
+.how-we-work {
+    padding: 0;
+
+    margin-bottom: 100px;
+
+    &__scroll {
+        overflow: hidden;
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 20px;
+
+        width: 1180px;
+
+        margin: 0 auto;
+    }
+
+    &__item {
+        width: 280px;
+        height: 250px;
+
+        padding: 30px;
+
+        background-color: #f5f5f5;
+
+        &-icon {
+            width: 30px;
+            height: 30px;
+
+            margin-bottom: 20px;
+
+            svg {
+                width: 100%;
+            }
+        }
+
+        &-title {
+            font-size: 20px;
+            line-height: 25px;
+            font-weight: 600;
+            color: $text-color;
+
+            margin-bottom: 10px;
+        }
+
+        &-text {
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: 400;
+            color: $text-color;
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .how-we-work {
+        &__wrapper {
+            width: max-content;
+        }
+
+        &__scroll {
+            width: 960px;
+
+            margin: 0 auto;
+
+            overflow-x: scroll;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .how-we-work {
+        &__scroll {
+            width: 720px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .how-we-work {
+        margin-bottom: 50px;
+
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__scroll {
+            width: 100%;
+        }
+
+        &__wrapper {
+            width: max-content;
+            padding: 0 12px;
+        }
+    }
+}

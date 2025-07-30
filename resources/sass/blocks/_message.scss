@@ -1,0 +1,57 @@
+.message {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    &__button {
+        width: 92px;
+        height: 92px;
+
+        background-color: transparent;
+
+        border: none;
+
+        z-index: 3;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+
+        list-style-type: none;
+
+        opacity: 0;
+        visibility: hidden;
+
+        max-height: 0px;
+
+        transition: all 1s;
+
+        &_open {
+            opacity: 1;
+            visibility: visible;
+            max-height: 200px;
+        }
+    }
+
+    &__item {
+        width: 60px;
+        height: 60px;
+
+        margin-bottom: 5px;
+
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    img {
+        pointer-events: none;
+    }
+}

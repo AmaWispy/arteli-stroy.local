@@ -1,0 +1,54 @@
+.form {
+    &__input {
+        display: block;
+        position: relative;
+        padding: 10px 10px;
+        width: calc(100% - 24px);
+        margin: 10px 0;
+        font-family: "Montserrat", Arial;
+        font-weight: 300;
+        font-size: 12px;
+        border: 2px solid #929292;
+
+        &:nth-child(2) {
+            margin-bottom: 0;
+        }
+
+        &:valid:not(:-moz-placeholder-shown) {
+            border-color: green;
+        }
+
+        &:valid:not(:-ms-input-placeholder) {
+            border-color: green;
+        }
+
+        &:valid:not(:placeholder-shown) {
+            border-color: green;
+        }
+
+        &:invalid:not(:-moz-placeholder-shown) {
+            border-color: red;
+        }
+
+        &:invalid:not(:-ms-input-placeholder) {
+            border-color: red;
+        }
+
+        &:invalid:not(:placeholder-shown) {
+            border-color: red;
+        }
+    }
+}
+
+@media (max-height: 530px) {
+    .modal-application {
+        .form {
+            &__input {
+                padding: 2px 2px;
+                width: inherit;
+                margin: 5px 0;
+                margin-right: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+@import "libs/normalize";
+@import "libs/fonts";
+@import "libs/animate";
+@import "libs/swiper.bundle";
+
+@import "base/base";
+
+//Legacy
+@import "blocks/legacy/tabs";
+
+//Current
+@import "blocks/article-block";
+@import "blocks/header/index";
+@import "blocks/footer";
+@import "blocks/mainscreen";
+@import "blocks/header-statuses";
+@import "blocks/wrapped-list";
+@import "blocks/timer";
+@import "blocks/portfolio";
+@import "blocks/tile";
+@import "blocks/rate";
+@import "blocks/faq";
+@import "blocks/socials";
+@import "blocks/contacts";
+@import "blocks/widgets";
+@import "blocks/scroller";
+@import "blocks/message";
+@import "blocks/tabs";
+@import "blocks/swiper-navigation";
+@import "blocks/partners";
+@import "blocks/done";
+@import "blocks/faq-main";
+@import "blocks/portfolio-main";
+@import "blocks/reviews";
+@import "blocks/sidebar";
+@import "blocks/vacancy";
+@import "blocks/service-portal";
+@import "blocks/modal";
+@import "blocks/checkbox";
+@import "blocks/cities";
+@import "blocks/form";
+@import "blocks/video";
+@import "blocks/service-page/index";
+@import "blocks/image-popup";
+@import "blocks/legacy/tariff";
+
+// Multilevel menu
+@import "blocks/multilevel-menu";
+
+// Services
+@import "blocks/services/index";
+
+// Telegram widget
+@import "blocks/telegram-widget";
+
+h1.main__title {
+    text-align: center;
+}
+
+.wide-container {
+    width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 880px 300px;
+    column-gap: 20px;
+}
+
+.main-content {
+    padding-top: 30px;
+}
+
+@media (max-width: 1199px) {
+    .wide-container {
+        width: 1024px;
+
+        grid-template-columns: 704px 300px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .wide-container {
+        width: fit-content;
+
+        grid-template-columns: 720px;
+
+        .sidebar {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .wide-container {
+        grid-template-columns: 100%;
+        padding: 0 12px;
+    }
+
+    .main-content {
+        padding-top: 20px;
+    }
+}

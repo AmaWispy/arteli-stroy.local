@@ -1,0 +1,138 @@
+.service-partners {
+    padding: 0;
+
+    margin-bottom: 100px;
+
+    &__container,
+    &__scroll {
+        width: 1180px;
+        margin: 0 auto;
+    }
+
+    &__scroll {
+        overflow: hidden;
+    }
+
+    &__wrapper {
+        width: fit-content;
+
+        display: flex;
+        gap: 20px;
+
+        transition: all ease 0.5s;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        margin-bottom: 0;
+    }
+
+    &__navigation {
+        display: flex;
+        gap: 6px;
+
+        &-prev,
+        &-next {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 0;
+
+            border: none;
+
+            width: 40px;
+            height: 40px;
+
+            background-color: #f5f5f5;
+
+            transition: all ease 0.3s;
+
+            &:hover {
+                background-color: #cfd2db;
+            }
+        }
+    }
+
+    &__group {
+        display: grid;
+
+        grid-template-columns: repeat(3, 380px);
+        grid-template-rows: repeat(2, 190px);
+        gap: 20px;
+    }
+
+    &__item {
+        width: 100%;
+        height: 100%;
+
+        border: solid #cfd2db 1px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .service-partners {
+        &__container,
+        &__scroll {
+            width: 960px;
+        }
+
+        &__group {
+            grid-template-columns: repeat(3, 306.67px);
+            grid-template-rows: repeat(2, 153.34px);
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .service-partners {
+        &__container,
+        &__scroll {
+            width: 720px;
+        }
+
+        &__scroll {
+            overflow-x: scroll;
+        }
+
+        &__navigation {
+            display: none;
+        }
+
+        &__group {
+            grid-template-columns: repeat(3, 280px);
+            grid-template-rows: repeat(2, 140px);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .service-partners {
+        margin-bottom: 50px;
+
+        &__container,
+        &__scroll {
+            width: 100%;
+        }
+
+        &__header {
+            margin-bottom: 20px;
+        }
+
+        &__wrapper {
+            padding: 0 12px;
+        }
+    }
+}

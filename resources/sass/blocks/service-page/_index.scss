@@ -1,0 +1,105 @@
+@import "./vars";
+
+@import "./shared";
+
+.service-page {
+    font-family: "Montserrat", sans-serif;
+
+    box-sizing: border-box;
+
+    &__container {
+        width: 1180px;
+        margin: 0 auto;
+    }
+
+    &__calculator {
+        display: none;
+
+        margin: 0 auto;
+
+        width: fit-content;
+    }
+
+    &__subtitle {
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 700;
+        color: $text-color;
+
+        margin: 0;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .service-page {
+        &__container {
+            width: 960px;
+        }
+
+        &__calculator {
+            display: block;
+
+            margin-bottom: 50px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .service-page {
+        &__container {
+            width: 720px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .service-page {
+        &__container {
+            width: 100%;
+            padding: 0 12px;
+
+            &_p0 {
+                padding: 0;
+            }
+        }
+
+        &__subtitle {
+            font-size: 25px;
+            line-height: 30px;
+            font-weight: 600;
+
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@import "./promo";
+@import "./service-calculator";
+
+@import "./breadcrumbs";
+
+@import "./prices";
+
+@import "./table";
+
+@import "./portfolio";
+
+@import "./how-we-work";
+
+@import "./warranty";
+
+@import "./reviews";
+@import "./form";
+
+@import "./partners";
+
+@import "./content";
+
+@import "./faq";
+
+@import "./tiles";
+
+@import "./featured";
+
+@import "./list";

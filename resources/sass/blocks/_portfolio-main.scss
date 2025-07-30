@@ -1,0 +1,127 @@
+@import "../base/variables";
+
+.portfolio-main {
+    padding-top: 60px;
+
+    &__title {
+        font-size: 32px;
+        line-height: 36px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: $dark_blue;
+        font-family: "Roboto", sans-serif;
+
+        margin: 0;
+        margin-bottom: 40px;
+    }
+
+    &__filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+
+        margin-bottom: 40px;
+    }
+
+    &__filter {
+        border: solid 1px #2a95dd;
+
+        padding: 4px 8px;
+
+        color: #2a95dd;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+
+        background-color: #fff;
+
+        &_active {
+            border-width: 2px;
+            border-image: linear-gradient(to top, #fa8200, #fada00);
+            border-image-slice: 1;
+
+            font-weight: 700;
+        }
+    }
+
+    &__list {
+        list-style-type: none;
+
+        display: grid;
+        grid-template-columns: repeat(4, 280px);
+        grid-auto-rows: 280px;
+        gap: 20px;
+
+        margin: 0;
+        padding: 0;
+        margin-bottom: 60px;
+    }
+
+    &__item {
+        &_hidden {
+            display: none;
+        }
+    }
+
+    &__descr {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+.portfolio-container {
+    width: 1180px;
+
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+@media (max-width: 1199px) {
+    .portfolio-main {
+        &__list {
+            grid-template-columns: repeat(3, 280px);
+        }
+    }
+
+    .portfolio-container {
+        width: 880px;
+    }
+}
+
+@media (max-width: 991px) {
+    .portfolio-main {
+        padding-top: 40px;
+
+        &__list {
+            grid-template-columns: repeat(2, 280px);
+        }
+    }
+
+    .portfolio-container {
+        width: 580px;
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio-main {
+        &__title {
+            margin-bottom: 20px;
+
+            font-size: 26px;
+            line-height: 30px;
+        }
+
+        &__list {
+            grid-template-columns: 280px;
+
+            margin-bottom: 30px;
+        }
+    }
+
+    .portfolio-container {
+        width: 280px;
+
+        padding-top: 20px;
+    }
+}

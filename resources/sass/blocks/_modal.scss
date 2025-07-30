@@ -1,0 +1,200 @@
+.overlay {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &_active {
+        display: flex;
+    }
+}
+
+.modal {
+    width: 410px;
+
+    background-color: #fff;
+
+    border: 1px solid #555;
+
+    position: relative;
+
+    &__close-btn {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin: 10px 5px 0 0;
+        cursor: pointer;
+        float: right;
+        overflow: hidden;
+        border: 0;
+        background: 0 0;
+
+        &::before {
+            content: "+";
+            color: #337ab7;
+            position: absolute;
+            z-index: 2;
+            transform: rotate(45deg);
+            font-size: 50px;
+            line-height: 1;
+            top: -5px;
+            left: 6px;
+            transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background: #337ab7;
+            z-index: 1;
+            transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+            transform: scale(0.01);
+        }
+
+        &:hover {
+            &::after {
+                transform: scale(1);
+            }
+
+            &::before {
+                transform: scale(0.8) rotate(45deg);
+                color: #fff;
+            }
+        }
+    }
+
+    &__content {
+        padding: 30px;
+        position: relative;
+    }
+
+    &__title {
+        font-size: calc(14px + 2 * ((100vw - 320px) / 960));
+        margin: 0 0 10px 0;
+        color: #000;
+        font-weight: 700;
+    }
+
+    &__form {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff url(../img/interface/loading.gif) center/50px
+                no-repeat;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease 0s;
+        }
+
+        &._sending {
+            &::after {
+                opacity: 1;
+                visibility: visible;
+                z-index: 2;
+            }
+        }
+
+        textarea {
+            display: block;
+            position: relative;
+            padding: 15px 10px;
+            width: calc(100% - 24px);
+            margin: 10px 0;
+            font-family: "Montserrat", Arial;
+            font-weight: 300;
+            font-size: 12px;
+            margin-bottom: 0;
+            border: 2px solid #929292;
+        }
+    }
+}
+
+.modal-application__open {
+    width: 172px;
+    height: 40px;
+
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+
+    padding: 0;
+}
+
+// @media (max-width: 992px) {
+//     .modal-application__open {
+//         // margin: 15px auto;
+//     }
+// }
+
+@media (max-width: 576px) {
+    .modal {
+        width: 300px;
+
+        &__title h3 {
+            font-size: 16px;
+        }
+
+        &__form {
+            span {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@media (max-height: 530px) {
+    .modal-application .modal__title h3 {
+        font-size: 14px;
+    }
+
+    .modal-application {
+        .modal {
+            &__content {
+                padding: 15px;
+            }
+
+            &__form {
+                display: flex;
+                flex-wrap: wrap;
+
+                textarea {
+                    padding: 4px 8px;
+                    width: inherit;
+                    margin: 5px 0;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-height: 280px) {
+    .modal-feedback .modal__content {
+        padding: 15px;
+    }
+
+    .modal-call {
+        .modal__content {
+            padding: 15px;
+        }
+    }
+}

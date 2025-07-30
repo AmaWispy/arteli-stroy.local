@@ -1,0 +1,114 @@
+.telegram-widget {
+    position: fixed;
+    top: 150px;
+    right: 110px;
+    z-index: 10;
+
+    transition: all 0.5s ease-in;
+
+    &__wrapper {
+        width: 240px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        background-color: #fff;
+    }
+
+    &__text {
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 400;
+        text-align: center;
+        color: #262626;
+
+        padding: 6px 0 5px 0;
+    }
+
+    &__link {
+        display: block;
+
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 600;
+        color: #262626;
+        text-align: center;
+
+        padding: 7px 0 8px 0;
+
+        background-image: linear-gradient(#fad800 0%, #fa8300 100%);
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: -25px;
+        right: -25px;
+
+        display: block;
+
+        border: none;
+        background-color: transparent;
+
+        rotate: 45deg;
+
+        opacity: 0;
+        pointer-events: none;
+
+        transition: all 0.3s ease-in;
+
+        padding: 10px;
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+
+        border-radius: 50%;
+
+        background-color: gray;
+
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+
+            display: block;
+
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &::before {
+            width: 15px;
+            height: 2px;
+        }
+
+        &::after {
+            width: 2px;
+            height: 15px;
+        }
+    }
+
+    &_hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0);
+    }
+
+    &:hover {
+        .telegram-widget__close-btn {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    @media (max-width: 767px) {
+        top: unset;
+        right: unset;
+        bottom: 35px;
+        left: 10px;
+    }
+}

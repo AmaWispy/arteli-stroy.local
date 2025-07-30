@@ -1,0 +1,36 @@
+.image-popup {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    background-color: #f5f5f5;
+
+    width: 100dvw;
+    height: 100dvh;
+
+    cursor: pointer;
+
+    &_active {
+        display: flex;
+    }
+
+    img {
+        max-height: 80%;
+
+        pointer-events: none;
+    }
+}
+
+.sib {
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        scale: 0.97;
+    }
+}

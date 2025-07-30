@@ -1,0 +1,70 @@
+.service-breadcrumbs {
+    margin-bottom: 100px;
+
+    &__list {
+        display: flex;
+        gap: 41px;
+
+        margin: 0;
+        padding: 0;
+
+        list-style-type: none;
+    }
+
+    &__item {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 400;
+
+        position: relative;
+
+        a {
+            font-size: 12px;
+            line-height: 15px;
+            font-weight: 400;
+            color: #586282;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &::after {
+            content: url('data:image/svg+xml,<svg width="5" height="7" viewBox="0 0 5 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.540509 0.5H0L2.20336 3.49999L0 6.5H0.540509L2.74388 3.49999L0.540509 0.5Z" fill="%23262626"/><path d="M2.68675 0.5H2.14624L4.34971 3.49999L2.14624 6.5H2.68675L4.89022 3.49999L2.68675 0.5Z" fill="%23262626"/></svg>');
+
+            position: absolute;
+            right: -22px;
+
+            color: #262626;
+        }
+
+        &:last-child {
+            &::after {
+                content: "";
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .service-breadcrumbs {
+        margin-bottom: 90px;
+        overflow: hidden;
+        overflow-x: scroll;
+        padding-bottom: 10px;
+
+        margin-bottom: 50px;
+
+        &__list {
+            gap: 21px;
+            width: max-content;
+        }
+
+        &__item {
+            &::after {
+                right: -12.5px;
+            }
+        }
+    }
+}

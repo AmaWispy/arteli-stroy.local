@@ -1,0 +1,163 @@
+@import "./vars";
+
+.service-form {
+    padding: 30px;
+
+    border-style: solid;
+    border-width: 3px;
+    border-image: linear-gradient($grad-from, $grad-to);
+    border-image-slice: 1;
+
+    display: flex;
+    gap: 50px;
+
+    &_mb {
+        margin-bottom: 100px;
+    }
+
+    &__info {
+        .service-form__title {
+            margin-bottom: 20px;
+
+            &_fz15 {
+                font-size: 15px;
+                line-height: 20px;
+            }
+
+            &_mb15 {
+                margin-bottom: 15px;
+            }
+
+            &_mb5 {
+                margin-bottom: 5px;
+            }
+
+            &_mb0 {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 25px;
+        line-height: 30px;
+        font-weight: 600;
+        color: $text-color;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        padding-left: 23px;
+
+        list-style-type: none;
+
+        &_mb10 {
+            margin-bottom: 10px;
+        }
+
+        &-item {
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: 400;
+            color: $text-color;
+
+            position: relative;
+
+            &::after {
+                content: "";
+
+                display: block;
+
+                width: 2px;
+                height: 2px;
+
+                background-color: $text-color;
+
+                border-radius: 50%;
+
+                position: absolute;
+                top: 10px;
+                left: -11px;
+            }
+        }
+    }
+
+    &__wrapper {
+        .service-form__title {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-input,
+        &-submit {
+            display: flex;
+            align-items: center;
+
+            width: 320px;
+            height: 45px;
+
+            font-size: 15px;
+            line-height: 20px;
+
+            border: none;
+        }
+
+        &-input {
+            padding: 0 10px;
+
+            font-weight: 400;
+
+            background-color: #f5f5f5;
+
+            &::placeholder {
+                color: #cfd2db;
+            }
+        }
+
+        &-submit {
+            justify-content: center;
+
+            background: linear-gradient($grad-from, $grad-to);
+
+            &:hover {
+                background: linear-gradient($grad-to, $grad-from);
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .service-form {
+        flex-direction: column;
+        padding: 20px 30px 20px 10px;
+        gap: 20px;
+
+        max-width: 365px;
+        margin: 0 auto;
+
+        &__info {
+            .service-form__title {
+                font-size: 15px;
+                line-height: 20px;
+
+                margin-bottom: 5px;
+
+                &_fz25 {
+                    font-size: 25px;
+                    line-height: 30px;
+                }
+            }
+        }
+
+        &_mb {
+            margin-bottom: 50px;
+        }
+    }
+}
+

@@ -1,0 +1,15 @@
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(290px, 400px));
+    grid-template-rows: repeat(4, auto);
+    gap: 30px;
+    justify-content: center;
+
+    @media (max-width: 991px) {
+        grid-template-columns: repeat(2, minmax(290px, 400px));
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(1, minmax(290px, 400px));
+    }
+}

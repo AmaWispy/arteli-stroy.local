@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px;
+}
+
+.link {
+    text-decoration: underline;
+    transition: box-shadow 0.7s ease, background 0.7s ease, border 0.7s ease;
+    padding: 2px;
+    color: #152eab;
+}
+
+.see-also {
+    padding: 0;
+    margin: 0;
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+    width: 100%;
+    display: block;
+    font-weight: 700;
+    background-color: inherit;
+    border: 0 !important;
+    border-left: 5px solid #006dad !important;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.57);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.57);
+    text-decoration: none;
+}
+
+.see-also:active,
+.see-also:hover {
+    opacity: 1;
+    -webkit-transition: opacity 250ms;
+    -o-transition: opacity 250ms;
+    transition: opacity 250ms;
+    text-decoration: none;
+}
+
+.see-also {
+    -webkit-transition: background-color 250ms;
+    -o-transition: background-color 250ms;
+    transition: background-color 250ms;
+    opacity: 1;
+    -webkit-transition: opacity 250ms;
+    -o-transition: opacity 250ms;
+    transition: opacity 250ms;
+}
+
+.see-also__text {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.see-also .ctaText {
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.see-also .postTitle {
+    color: inherit;
+    text-decoration: underline !important;
+    font-size: 16px;
+}
+
+.see-also:hover .postTitle {
+    text-decoration: underline !important;
+}
+
+@import "../blocks/service-portal";
+@import "../blocks/service-page/list";

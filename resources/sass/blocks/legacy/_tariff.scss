@@ -1,0 +1,151 @@
+.tariff {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 30px 0;
+}
+
+.tafiff__card {
+    display: flex;
+    flex-direction: column;
+}
+
+.tafiff__card-list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tafiff__card-price {
+    font-weight: 700;
+    color: #fe8e2f;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.tafiff__card-for {
+    margin-top: 15px;
+    font-size: 13px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.tafiff__card-for::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 10px solid #fe8e2f;
+    position: absolute;
+    left: 2px;
+    top: 5px;
+}
+
+.tafiff__card-title {
+    font-weight: 700;
+    font-size: 19px !important;
+    color: #004298 !important;
+}
+
+.tafiff__card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px 10px 30px 10px;
+}
+
+.tafiff__card-inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: 1px solid #9ba8b9;
+}
+
+.tafiff__card-img {
+    overflow: hidden;
+    min-height: min-content;
+    max-height: 150px;
+}
+
+.tafiff__card-subtitle {
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.tariff .service-block__card-open {
+    color: #fe8e2f;
+    font-weight: 700;
+    text-decoration: underline;
+    padding-right: 30px;
+}
+
+.tariff .service-block__card-open:after {
+    content: "";
+    right: 10px;
+    left: auto;
+    border-top: 8px solid #fe8e2f;
+}
+
+.tafiff__card-info {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.tafiff__card-info span {
+    font-weight: 700;
+}
+
+.tafiff__card-button {
+    width: 100%;
+    max-width: inherit;
+    margin-top: 20px;
+    white-space: nowrap;
+    padding: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: #fe8e2f;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.tafiff__card-button:hover {
+    background: #ba6722;
+}
+
+@media (max-width: 1200px) {
+    .tariff {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 310px));
+    }
+}
+
+@media (max-width: 1024px) {
+    .tariff .service-block__card-open:hover {
+        color: #fe8e2f;
+    }
+}
+
+@media (max-width: 767px) {
+    .tariff {
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .tafiff__card {
+        flex-basis: auto;
+        margin: 0 auto;
+    }
+
+    .tafiff__card-inner {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+}

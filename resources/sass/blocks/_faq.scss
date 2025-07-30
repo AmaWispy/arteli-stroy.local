@@ -1,0 +1,151 @@
+.faq-section {
+    margin: 40px 0;
+    padding: 0;
+
+    input,
+    p {
+        display: none;
+    }
+
+    label {
+        font-size: 1.2em;
+        cursor: pointer;
+        background: #eee;
+        display: block;
+        position: relative;
+        padding: 7px 30px 7px 10px;
+        font-weight: 700;
+        border: 1px solid #ddd;
+        border-left: 3px solid #888;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+        transition: all .15s ease-out;
+
+        &+p {
+            display: block;
+            color: #999;
+            font-size: .85em;
+            transition: all .15s ease-out;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        &+table {
+            margin: 1em 0;
+            overflow: hidden;
+            display: flex;
+            font-size: .85em;
+            color: #999;
+            border: 1px solid #888;
+            position: relative;
+            transition: all .15s ease-out;
+
+            tbody {
+                position: absolute;
+                opacity: 0;
+                right: 0;
+            }
+
+            thead {
+                position: static;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                tr {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                td {
+                    display: block;
+                    width: 100%;
+                    border: 1px solid #888;
+                    text-align: left;
+                }
+            }
+        }
+
+        &::selection {
+            background: 0 0;
+        }
+
+        &:hover {
+            background: #f5f5f5;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: 4px;
+            top: 50%;
+            margin-top: -6px;
+            border: 6px solid transparent;
+            border-left-color: inherit
+        }
+    }
+
+    input[type=checkbox]:checked {
+        &~p {
+            display: block;
+            color: #444;
+            font-size: 1em;
+            text-overflow: clip;
+            white-space: normal;
+            overflow: visible
+        }
+
+        &~label {
+            border-color: coral;
+            background: #f5deb4;
+            background-image: linear-gradient(to bottom, #fff, #f5deb4);
+            box-shadow: 0 0 1px rgba(0, 0, 0, .4);
+
+            &::before {
+                border: 6px solid transparent;
+                border-top-color: inherit;
+                margin-top: -3px;
+                right: 10px
+            }
+        }
+
+        &~table {
+            display: table;
+            font-size: 1em;
+            color: #444;
+            border: 2px solid #006dad;
+
+            tbody {
+                position: static;
+                opacity: 1;
+            }
+
+            thead {
+                width: 100%;
+                display: table-header-group;
+
+                tr {
+                    width: 100%;
+                    display: table-row;
+                }
+
+                td {
+                    width: auto;
+                    display: table-cell;
+                    border: 2px solid #006dad;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .faq-section {
+        label {
+            &+table {
+                
+            }
+        }
+    }
+}

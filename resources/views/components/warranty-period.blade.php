@@ -1,0 +1,1 @@
+<img class="sib article__img m-auto" loading="lazy" width="800" height="500" src="/img/interface/warranty-card.webp" title="Гарантийный сертификат компании «Артель и С» " alt="Гарантийный сертификат компании «Артель и С» фото">

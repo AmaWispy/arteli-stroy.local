@@ -1,0 +1,9 @@
+User-agent: *
+Sitemap:  https://arteli-stroy.ru/sitemap.xml
+Disallow: /doc/abray.pdf
+Disallow: /doc/green.pdf
+Disallow: /mail-call.php
+Disallow: /mail-help
+Disallow: /mail-stopgap
+Disallow: /mail-calc
+Allow: /

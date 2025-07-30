@@ -1,0 +1,310 @@
+@import "./vars";
+
+.service-calculator {
+    width: 380px;
+
+    padding: 30px;
+    padding-top: 20px;
+
+    background-color: #fff;
+
+    &__title {
+        font-size: 25px;
+        line-height: 30px;
+        font-weight: 600;
+        color: $text-color;
+
+        margin-bottom: 15px;
+    }
+
+    &__subtitle {
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 600;
+        color: $text-color;
+
+        margin-bottom: 5px;
+    }
+
+    &__types {
+        margin-bottom: 15px;
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        &-item {
+            width: 157px;
+            height: 30px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: $gray;
+            font-size: 12px;
+            line-height: 15px;
+            font-weight: 400;
+
+            background-color: #f5f5f5;
+
+            cursor: pointer;
+
+            transition: all ease 0.3s;
+
+            &_active,
+            &:hover {
+                background-color: #cfd2db;
+            }
+        }
+    }
+
+    &__square {
+        margin-bottom: 15px;
+
+        &-title {
+            margin-bottom: 11px;
+        }
+
+        &-bottom {
+            display: flex;
+            gap: 6px;
+        }
+
+        &-result,
+        &-dec,
+        &-inc {
+            height: 30px;
+
+            background-color: #f5f5f5;
+
+            font-size: 12px;
+            line-height: 15px;
+            color: $gray;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-result {
+            width: 248px;
+
+            font-weight: 400;
+        }
+
+        &-dec,
+        &-inc {
+            width: 30px;
+            font-weight: 600;
+
+            border: none;
+
+            transition: all ease 0.3s;
+
+            &:hover {
+                background-color: #cfd2db;
+            }
+        }
+    }
+
+    &__range {
+        width: 100%;
+
+        margin-bottom: 15px;
+
+        &-slider {
+            appearance: none;
+
+            width: 100%;
+            height: 5px;
+
+            background-color: #cfd2db;
+
+            position: relative;
+
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                height: 100%;
+                background: $gray;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: var(--progress);
+            }
+
+            &::-moz-range-progress {
+                background: $gray;
+                height: 100%;
+            }
+
+            &::-webkit-slider-thumb {
+                appearance: none;
+
+                width: 9px;
+                height: 9px;
+
+                background-color: #cfd2db;
+
+                border: solid 2px $gray;
+                border-radius: 50%;
+
+                position: relative;
+                z-index: 1;
+
+                cursor: pointer;
+
+                box-sizing: border-box;
+            }
+
+            &::-moz-range-thumb {
+                width: 9px;
+                height: 9px;
+
+                background-color: #cfd2db;
+
+                border: solid 2px $gray;
+                border-radius: 50%;
+
+                cursor: pointer;
+
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    &__result {
+        font-size: 25px;
+        line-height: 30px;
+        font-weight: 600;
+        color: $text-color;
+
+        margin-bottom: 15px;
+
+        &-target {
+            background-image: linear-gradient($grad-from, $grad-to);
+            color: transparent;
+            background-clip: text;
+        }
+    }
+
+    &__form {
+        &-label {
+            display: block;
+
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: 600;
+            color: $text-color;
+
+            margin-bottom: 5px;
+        }
+
+        &-wrap {
+            width: 100%;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 30px;
+            gap: 6px;
+
+            margin-bottom: 10px;
+        }
+
+        &-input {
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            height: 100%;
+
+            padding: 0 10px;
+
+            font-size: 15px;
+            line-height: 15px;
+            font-weight: 400;
+
+            background-color: #f5f5f5;
+
+            border: none;
+
+            &::placeholder {
+                color: #cfd2db;
+            }
+        }
+
+        &-submit {
+            display: block;
+
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: 600;
+            color: $text-color;
+
+            background-image: linear-gradient($grad-from, $grad-to);
+
+            border: none;
+
+            transition: all ease 0.3s;
+
+            &:hover {
+                background-image: linear-gradient($grad-to, $grad-from);
+            }
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .service-calculator {
+        background-color: #f5f5f5;
+
+        &__types {
+            &-item {
+                background-color: #fff;
+
+                &_active,
+                &:hover {
+                    background-color: #cfd2db;
+                }
+            }
+        }
+
+        &__square {
+            &-result,
+            &-dec,
+            &-inc {
+                background-color: #fff;
+            }
+        }
+
+        &__form {
+            &-input {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .service-calculator {
+        width: 365px;
+
+        padding: 30px 32px 35px 13px;
+
+        &__form {
+            &-wrap {
+                grid-template-columns: 1fr;
+                grid-template-rows: 45px;
+                grid-auto-rows: 45px;
+            }
+        }
+    }
+}

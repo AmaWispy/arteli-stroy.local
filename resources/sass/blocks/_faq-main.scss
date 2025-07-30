@@ -1,0 +1,160 @@
+.faq {
+    padding: 60px 0 120px 0;
+
+    &__title {
+        color: #080d30;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 40px;
+
+        margin-bottom: 40px;
+    }
+
+    &__wrapper {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+
+        cursor: pointer;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__question {
+        color: #000;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 30px;
+
+        padding: 10px 64px 10px 20px;
+
+        background-color: #e8e8e8;
+
+        position: relative;
+
+        pointer-events: none;
+    }
+
+    &__answer {
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+
+        padding: 0 64px 0 20px;
+
+        border: 1px solid #e8e8e8;
+
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition: all 0.5s ease-in-out;
+    }
+
+    &__icon {
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        position: absolute;
+
+        width: 24px;
+        height: 24px;
+
+        &::before,
+        &::after {
+            content: "";
+
+            display: block;
+
+            background-color: #000;
+
+            border-radius: 8px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            transition: all 0.5s ease-in-out;
+
+            transform-origin: top;
+        }
+
+        &::before {
+            width: 2px;
+            height: 18px;
+        }
+
+        &::after {
+            width: 18px;
+            height: 2px;
+        }
+    }
+
+    &_active {
+        .faq__answer {
+            max-height: 300px;
+            padding: 30px 64px 30px 20px;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .faq__icon {
+            &::before {
+                rotate: 90deg;
+            }
+
+            &::after {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .faq {
+        padding: 40px 0 60px 0;
+
+        &__title {
+            font-size: 25px;
+            line-height: 30px;
+
+            margin-bottom: 20px;
+        }
+
+        &__question {
+            font-size: 16px;
+            line-height: 20px;
+
+            padding: 10px 44px 10px 10px;
+        }
+
+        &__answer {
+            font-size: 14px;
+
+            padding: 0 44px 0 10px;
+        }
+
+        &__icon {
+            right: 10px;
+        }
+
+        &_active {
+            .faq__answer {
+                padding: 15px 44px 15px 10px;
+            }
+        }
+    }
+}

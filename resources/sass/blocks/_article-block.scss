@@ -1,0 +1,68 @@
+.article__block {
+    margin-bottom: 50px;
+    text-align: justify;
+    font-family: "Montserrat", Arial;
+    font-weight: 300;
+    width: 100%;
+
+    ol,
+    ul {
+        line-height: 1.6;
+        color: #080d30;
+    }
+
+    ol {
+        li {
+            font-size: calc(12px + 3 * ((100vw - 320px) / 960));
+        }
+    }
+
+    ul {
+        // margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            margin: 0.6em;
+            padding-left: 16px;
+            font-size: calc(12px + 3 * ((100vw - 320px) / 960));
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 6px;
+                left: -7px;
+                width: 13px;
+                height: 13px;
+                background: #3994ff;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .about-ul {
+        li {
+            display: flex;
+            align-self: center;
+
+            &:before {
+                content: url(../img/about/avangard.png);
+                padding-right: 10px;
+                margin-left: -26px;
+                display: block;
+                margin-bottom: -13px;
+            }
+        }
+    }
+
+    li {
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    p {
+        line-height: 1.6;
+        font-size: calc(12px + 3 * ((100vw - 320px) / 960));
+        color: #080d30;
+    }
+}

@@ -1,0 +1,380 @@
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 5px;
+
+    input[type="radio"] {
+        display: none;
+
+        &:checked + label {
+            background: linear-gradient(to top, #fa8200, #fada00);
+            border-bottom: 1px solid #fff;
+            color: #fff;
+        }
+    }
+
+    .content-tabs {
+        display: none;
+
+        margin-top: 10px;
+        position: relative;
+        border: 3px solid;
+        border-image: linear-gradient(to top, #fa8200, #fada00);
+        border-image-slice: 1;
+        z-index: 1;
+        padding: 10px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+
+            background: linear-gradient(to top, #fa8200, #fada00);
+            transition: all 0.3s ease;
+        }
+    }
+
+    label {
+        flex: 1 1 auto;
+        border: 1px solid #ddd;
+
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        user-select: none;
+        background-color: #f5f5f5;
+        padding: 2px 8px;
+        font-size: 16px;
+        line-height: 1.5;
+
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+        cursor: pointer;
+        position: relative;
+        top: 1px;
+
+        &:not(:first-of-type) {
+            border-left: none;
+        }
+    }
+}
+
+#tab-btn-10:checked ~ #content-10,
+#tab-btn-11:checked ~ #content-11,
+#tab-btn-12:checked ~ #content-12,
+#tab-btn-13:checked ~ #content-13,
+#tab-btn-1:checked ~ #content-1,
+#tab-btn-2:checked ~ #content-2,
+#tab-btn-3:checked ~ #content-3,
+#tab-btn-4:checked ~ #content-4,
+#tab-btn-5:checked ~ #content-5,
+#tab-btn-6:checked ~ #content-6,
+#tab-btn-7:checked ~ #content-7,
+#tab-btn-8:checked ~ #content-8,
+#tab-btn-9:checked ~ #content-9 {
+    display: block;
+}
+
+#wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content__tabs {
+    width: 100%;
+    min-width: 260px;
+    padding: 55px 0;
+    transition: 0.3s ease;
+}
+
+.tabss {
+    margin: 0;
+    background-image: -o-linear-gradient(315deg, #f5f7fa 0, #c3cfe2 100%);
+    background-image: linear-gradient(135deg, #f5f7fa 0, #c3cfe2 100%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 80px;
+    border-radius: 2px 2px 0 0;
+}
+
+.tablinks {
+    background: 0 0;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(70%, transparent),
+        to(rgba(255, 255, 255, 0.2))
+    );
+    background-image: -o-linear-gradient(
+        left,
+        transparent 70%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    background-image: linear-gradient(
+        90deg,
+        transparent 70%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 80px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: "IBM Plex Sans", sans-serif;
+    overflow: hidden;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.tablinks:before {
+    background-image: -o-linear-gradient(315deg, #667eea 0, #764ba2 100%);
+    background-image: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.tablinks:hover::before {
+    height: 100%;
+    z-index: 2;
+    bottom: 0;
+}
+
+.tablinks.active {
+    background-color: #fff;
+    z-index: 0;
+    border-right: 0;
+    border-left: 0;
+    height: 110px;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.tablinks.active:before {
+    content: "";
+    width: 100%;
+    height: 5px;
+    top: 0;
+    left: 0;
+}
+
+.tablinks.active p,
+.tablinks.active:hover p {
+    opacity: 1;
+    color: #686868;
+}
+
+.tablinks p {
+    opacity: 0.6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 2;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+    padding: 0;
+    margin: 0;
+    color: #686868;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    font-weight: 400;
+}
+
+.tablinks:hover p {
+    color: #fff;
+    opacity: 1;
+}
+
+.wrapper_tabcontent {
+    background-color: #fff;
+    margin-top: 0;
+    position: relative;
+    opacity: 1;
+    padding: 40px 10px;
+    overflow: hidden;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    top: 0;
+}
+
+.tabcontent {
+    display: none;
+    min-height: 180px;
+}
+
+@-webkit-keyframes tabEffect {
+    from {
+        top: -40px;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+@keyframes tabEffect {
+    from {
+        top: -40px;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+.tabcontent.active {
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    display: block;
+}
+
+.wrapper_tabcontent:after {
+    content: "";
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    background-image: -o-linear-gradient(315deg, #667eea 0, #764ba2 100%);
+    background-image: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+    left: 0;
+    bottom: 0;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.tabcontent {
+    color: #686868;
+    margin: 0;
+    padding: 0;
+    line-height: 28px;
+    font-weight: 100;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    -webkit-animation: fadeEffect 0.6s ease;
+    animation: fadeEffect 0.6s ease;
+    width: 100%;
+    font-size: 16px;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+@-webkit-keyframes fadeEffect {
+    from {
+        opacity: 0;
+        margin-left: 30px;
+    }
+
+    to {
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+        margin-left: 30px;
+    }
+
+    to {
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .content__tabs {
+        margin: 0 4%;
+        margin-top: 5%;
+    }
+
+    .tabss {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .tablinks {
+        height: 40px;
+        margin: 5px 0;
+    }
+
+    .tablinks p {
+        font-size: 16px;
+    }
+
+    .tablinks.active {
+        height: 60px;
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .tablinks:hover p {
+        color: #686868;
+        opacity: 0.6;
+    }
+
+    .tablinks p:before {
+        display: none;
+    }
+
+    .tabcontent h3 {
+        top: 65px;
+    }
+
+    .tabcontent p {
+        font-size: 14px;
+        line-height: 26px;
+    }
+}
